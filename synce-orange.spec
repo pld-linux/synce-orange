@@ -58,7 +58,7 @@ Pliki nag³ówkowe biblioteki Orange.
 Summary:	Static Orange library
 Summary(pl):	Statyczna biblioteka Orange
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}-%{release}
+Requires:	%{name}-libs-devel = %{version}-%{release}
 
 %description libs-static
 Static Orange library.
