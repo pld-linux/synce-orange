@@ -18,7 +18,7 @@ BuildRequires:	rpmbuild(macros) >= 1.213
 BuildRequires:	synce-libsynce-devel
 BuildRequires:	synce-dynamite-libs-devel
 BuildRequires:	synce-unshield-libs-devel
-Requires:	%{name}-libs = %{version}
+Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -34,7 +34,7 @@ Cabinet.
 %package libs
 Summary:	The Orange library
 Summary(pl):	Biblioteka Orange
-Group:		Development/Libraries
+Group:		Libraries
 
 %description libs
 The Orange library.
@@ -58,7 +58,7 @@ Pliki nag³ówkowe biblioteki Orange.
 Summary:	Static Orange library
 Summary(pl):	Statyczna biblioteka Orange
 Group:		Development/Libraries
-Requires:	%{name}-libs = %{version}-%{release}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description libs-static
 Static Orange library.
