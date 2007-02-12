@@ -2,7 +2,7 @@
 %define	_realname	orange
 
 Summary:	SynCE Orange - a tool capable to get installable MS Cabinet Files from installers
-Summary(pl):	SynCE Orange - narzêdzie zdolne do wydobycia plików MS Cabinet z instalatorów
+Summary(pl.UTF-8):   SynCE Orange - narzÄ™dzie zdolne do wydobycia plikÃ³w MS Cabinet z instalatorÃ³w
 Name:		synce-%{_realname}
 Version:	0.3
 Release:	1
@@ -26,44 +26,44 @@ Orange is a tool for squeezing out juicy installable Microsoft Cabinet
 Files from self-extracting installers for Microsoft Windows and some
 other installer file formats.
 
-%description -l pl
-Orange jest narzêdziem umo¿liwiaj±cym wydobycie z samorozpakowuj±cych
-siê instalatorów przeznaczonych dla Microsoft Windows plików Microsoft
+%description -l pl.UTF-8
+Orange jest narzÄ™dziem umoÅ¼liwiajÄ…cym wydobycie z samorozpakowujÄ…cych
+siÄ™ instalatorÃ³w przeznaczonych dla Microsoft Windows plikÃ³w Microsoft
 Cabinet.
 
 %package libs
 Summary:	The Orange library
-Summary(pl):	Biblioteka Orange
+Summary(pl.UTF-8):   Biblioteka Orange
 Group:		Libraries
 
 %description libs
 The Orange library.
 
-%description libs -l pl
+%description libs -l pl.UTF-8
 Biblioteka Orange.
 
 %package libs-devel
 Summary:	Header files for the Orange library
-Summary(pl):	Pliki nag³ówkowe biblioteki Orange
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki Orange
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 
 %description libs-devel
 Header files for the Orange library.
 
-%description libs-devel -l pl
-Pliki nag³ówkowe biblioteki Orange.
+%description libs-devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe biblioteki Orange.
 
 %package libs-static
 Summary:	Static Orange library
-Summary(pl):	Statyczna biblioteka Orange
+Summary(pl.UTF-8):   Statyczna biblioteka Orange
 Group:		Development/Libraries
 Requires:	%{name}-libs-devel = %{version}-%{release}
 
 %description libs-static
 Static Orange library.
 
-%description libs-static -l pl
+%description libs-static -l pl.UTF-8
 Statyczna biblioteka Orange.
 
 %prep
