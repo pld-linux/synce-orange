@@ -2,7 +2,7 @@
 %define	_realname	orange
 
 Summary:	SynCE Orange - a tool capable to get installable MS Cabinet Files from installers
-Summary(pl.UTF-8):   SynCE Orange - narzędzie zdolne do wydobycia plików MS Cabinet z instalatorów
+Summary(pl.UTF-8):	SynCE Orange - narzędzie zdolne do wydobycia plików MS Cabinet z instalatorów
 Name:		synce-%{_realname}
 Version:	0.3
 Release:	1
@@ -33,7 +33,7 @@ Cabinet.
 
 %package libs
 Summary:	The Orange library
-Summary(pl.UTF-8):   Biblioteka Orange
+Summary(pl.UTF-8):	Biblioteka Orange
 Group:		Libraries
 
 %description libs
@@ -44,7 +44,7 @@ Biblioteka Orange.
 
 %package libs-devel
 Summary:	Header files for the Orange library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki Orange
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki Orange
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 
@@ -56,7 +56,7 @@ Pliki nagłówkowe biblioteki Orange.
 
 %package libs-static
 Summary:	Static Orange library
-Summary(pl.UTF-8):   Statyczna biblioteka Orange
+Summary(pl.UTF-8):	Statyczna biblioteka Orange
 Group:		Development/Libraries
 Requires:	%{name}-libs-devel = %{version}-%{release}
 
