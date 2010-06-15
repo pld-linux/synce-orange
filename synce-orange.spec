@@ -4,12 +4,12 @@
 Summary:	SynCE Orange - a tool capable to get installable MS Cabinet Files from installers
 Summary(pl.UTF-8):	SynCE Orange - narzędzie zdolne do wydobycia plików MS Cabinet z instalatorów
 Name:		synce-%{_realname}
-Version:	0.3.2
+Version:	0.4
 Release:	1
 License:	MIT
 Group:		Applications
 Source0:	http://dl.sourceforge.net/synce/lib%{_realname}-%{version}.tar.gz
-# Source0-md5:	52f9fb2b97ee08b4929079ed68ba16a0
+# Source0-md5:	40e9ac3de389c74a60007f7493e072a5
 URL:		http://www.synce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1.4
@@ -101,6 +101,7 @@ rm -rf $RPM_BUILD_ROOT
 %files libs
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/liborange.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/liborange.so.?
 
 %files libs-devel
 %defattr(644,root,root,755)
