@@ -11,7 +11,9 @@ Source0:	http://downloads.sourceforge.net/synce/lib%{pkgname}-%{version}.tar.gz
 URL:		http://www.synce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1.4
+BuildRequires:	gettext-devel
 BuildRequires:	libtool
+BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.213
 BuildRequires:	synce-dynamite-libs-devel
 BuildRequires:	synce-libsynce-devel
