@@ -1,23 +1,25 @@
 %define		pkgname	orange
 Summary:	SynCE Orange - a tool capable to get installable MS Cabinet Files from installers
-Summary(pl.UTF-8):	SynCE Orange - narzędzie zdolne do wydobycia plików MS Cabinet z instalatorów
+Summary(pl.UTF-8):	SynCE Orange - narzędzie zdolne do wydobywania plików MS Cabinet z instalatorów
 Name:		synce-%{pkgname}
 Version:	0.4
 Release:	4
 License:	MIT
-Group:		Applications
+Group:		Applications/File
 Source0:	http://downloads.sourceforge.net/synce/lib%{pkgname}-%{version}.tar.gz
 # Source0-md5:	40e9ac3de389c74a60007f7493e072a5
 URL:		http://www.synce.org/
-BuildRequires:	autoconf >= 2.50
+BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1.4
 BuildRequires:	gettext-tools
+BuildRequires:	libgsf-devel
+BuildRequires:	libmagic-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.213
-BuildRequires:	synce-dynamite-libs-devel
-BuildRequires:	synce-libsynce-devel
-BuildRequires:	synce-unshield-libs-devel
+BuildRequires:	synce-core-lib-devel >= 0.9.1
+BuildRequires:	synce-dynamite-libs-devel >= 0.1
+BuildRequires:	synce-unshield-libs-devel >= 0.5
 BuildRequires:	zlib-devel
 Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -28,14 +30,17 @@ Files from self-extracting installers for Microsoft Windows and some
 other installer file formats.
 
 %description -l pl.UTF-8
-Orange jest narzędziem umożliwiającym wydobycie z samorozpakowujących
-się instalatorów przeznaczonych dla Microsoft Windows plików Microsoft
-Cabinet.
+Orange jest narzędziem umożliwiającym wydobywanie plików Microsoft
+Cabinet z samorozpakowujących się instalatorów przeznaczonych dla
+Microsoft Windows.
 
 %package libs
 Summary:	The Orange library
 Summary(pl.UTF-8):	Biblioteka Orange
 Group:		Libraries
+Requires:	synce-core-lib >= 0.9.1
+Requires:	synce-dynamite-libs >= 0.1
+Requires:	synce-unshield-libs >= 0.5
 
 %description libs
 The Orange library.
@@ -48,9 +53,9 @@ Summary:	Header files for the Orange library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki Orange
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
-Requires:	synce-dynamite-libs-devel
-Requires:	synce-libsynce-devel
-Requires:	synce-unshield-libs-devel
+Requires:	synce-dynamite-libs-devel >= 0.1
+Requires:	synce-core-lib-devel >= 0.9.1
+Requires:	synce-unshield-libs-devel >= 0.5
 
 %description libs-devel
 Header files for the Orange library.
@@ -79,7 +84,11 @@ Statyczna biblioteka Orange.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	--enable-inno \
+	--enable-msi \
+	--enable-vise \
+	--with-libgsf
 
 %{__make}
 
@@ -97,14 +106,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc LICENSE
-%attr(755,root,root) %{_bindir}/*
+%doc ChangeLog LICENSE TODO
+%attr(755,root,root) %{_bindir}/orange
 %{_mandir}/man1/orange.1*
 
 %files libs
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/liborange.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/liborange.so.?
+%attr(755,root,root) %ghost %{_libdir}/liborange.so.0
 
 %files libs-devel
 %defattr(644,root,root,755)
